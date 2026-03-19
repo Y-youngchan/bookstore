@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단기 북스</title>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <header>
+        <div id="header_top">
+            <div class="container">
+                <div id="login">
+                    <!-- 윗상단 로그인 메뉴 -->
+                    <ul>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">장바구니</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">내 강의실</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 좌측 상단 로고 -->
+        <div id="header_main">
+            <img src="./img/Left_top_logo.png" alt="logo">
+            <!-- 로고 오른쪽 단기 메뉴 -->
+            <select name="mode" id="단기종류">
+                <option value="#">공단기</option>
+                <option value="#">기술단기</option>
+                <option value="#">소방단기</option>
+                <option value="#">공기업단기</option>
+                <option value="#">자단기</option>
+                <option value="#">영단기</option>
+                <option value="#">노무사단기</option>
+                <option value="#">법무사단기</option>
+            </select>
+        </div>
+
+        <nav>
+            <div class="container">
+                <!-- 로고 밑 메뉴라인 -->
+                <ul>
+                    <li><a href="#">공단기 홈<a></li>
+                    <li><a href="#">선생님<a></li>
+                    <li><a href="#">수강신청<a></li>
+                    <li><a href="#">수험정보<a></li>
+                    <li><a href="#">이벤트<a></li>
+                    <li><a href="#">교재<a></li>
+                    <li><a href="#">풀서비스<a></li>
+                    <li><a href="#">프리패스<a></li>
+                    <li><a href="#">프리미엄 서비스<a></li>
+
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <!-- 좌측 메뉴 -->
+        <aside>
+
+        </aside>
+        <div id="maincontent">
+            <div id="slider">
+                <!-- 추천교재 리모트 -->
+                <div id="slider_txt">
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <!-- Swiper -->
+                <div class="swiper sliderSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="" alt="">
+                        </div>
+                        <div class="swiper-slide">Slide 2</div>
+                        <div class="swiper-slide">Slide 3</div>
+                        <div class="swiper-slide">Slide 4</div>
+                        <div class="swiper-slide">Slide 5</div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <!-- 교재검색란 -->
+            <div id="search"></div>
+
+            <div id="banner"></div>
+
+            <div id="new">
+                <h3>새로 나온 교재</h3>
+                <!-- Swiper -->
+                <div class="swiper newSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Slide 1</div>
+                        <div class="swiper-slide">Slide 2</div>
+                        <div class="swiper-slide">Slide 3</div>
+                        <div class="swiper-slide">Slide 4</div>
+                        <div class="swiper-slide">Slide 5</div>
+                        <div class="swiper-slide">Slide 6</div>
+                        <div class="swiper-slide">Slide 7</div>
+                        <div class="swiper-slide">Slide 8</div>
+                        <div class="swiper-slide">Slide 9</div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <!-- 하단 설명창 회색줄 -->
+        <div class="container">
+            <ul>
+                <li><a href="~">회사소개</a></li>
+                <li><a href="~">이용약관</a></li>
+                <li><a href="~">개인정보처리방침</a></li>
+                <li><a href="~">강사모집</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script src="./js/swiper.js"></script>
+    <script src="./js/book.js"></script>
+
+</body>
+
+</html>
