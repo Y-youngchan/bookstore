@@ -38,22 +38,22 @@ header {
 
 /* 로고 오른쪽 단기 메뉴 */
 #header_main select {
-    width: 80px;
-    height: 55px;
+    width: 70px;
+    height: 35px;
     margin-left: 20px;
     border-radius: 5px;
         
 }
 
 /* 로그인 회원가입 박스 위치설정 */
-#login {
+.login {
     width: 290px;
     height: 20px;
     /* background-color: orange; */
 }
 
 /* 로그인 회원가입 박스 설정 */
-#login ul {
+.login ul {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -61,17 +61,19 @@ header {
 }
 
 /* 로그인 회원가입 라인 정렬 */
-#login li {
+.login li {
     float: left;
     padding: 0 5px;
 }
 
 /* 로그인 회원가입 라인 after사용 */
-#header_top li::after {
+.login li::after {
     content: "|";float: right; margin-right: -8px;
 }
 
-#login a {
+.login li:last-child::after{content:"";}
+
+.login a {
     text-decoration: none;
     color: #333;
 
@@ -226,15 +228,88 @@ aside {
 /* footer */
 
 /* 하단 설명창 회색줄 */
-footer {
+#footerAll {
     width: 100%;
-    height: 190px;
+    height: 70px;
     border-top: 1px solid #ddd;
 }
 
-footer ul li{
-     float: left;
-     margin-right: 8px;
+#footerAll .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_menu {
+    width: 30%;
+    height: 35px;    
+    background-color: blue;
+}
+
+#footerAll ul li{
+     display: inline-flex;
+     justify-content: space-around;
+     gap: 0 5px;
+     font-size: 12px;
      font-weight: bold;
-     color: #ddd;
+     color: #888;
+}
+
+#footerAll ul li::after {
+    content: "|";
+    
+    margin-left: 11px;
+    font-size: 8px;
+    color: #888;
+}
+
+#footerAll ul li:last-child::after{content:"";}
+
+
+/* 패밀리사이트 오른쪽 단기 메뉴 */
+.footer_familySite {
+    width: 15%;
+    height: 40px;
+
+    background-color: pink;
+}
+.footer_familySite select .site-box {
+    width: 100%;
+    height: 38px;
+    padding-left: 15px;
+    padding-right: 30px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    
+}
+
+/* 회사정보 라인 */
+.footerEtc{    
+    display: flex;
+}
+
+.footerEtc .footer_content ul li::after {
+    content: "|";
+}
+.footerEtc ul li:last-child::after{content:"";}
+
+.footerEtc .footer_content .comp_name {
+    display: flex;
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.footerEtc .footer_content .impo_1 {
+    display: flex;  
+    justify-content: flex-start;
+    gap: 0 10px;
+    font-size: 12px;
+}
+
+
+.footerEtc .footer_content .impo_2 {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0 10px;
+    font-size: 12px;
 }
