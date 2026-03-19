@@ -22,7 +22,7 @@ async function bookData() {
                 console.log(data);
 
                 // .box 요소 전체 선택
-                const boxElements = document.querySelectorAll("#new.swiper-slide");
+                const boxElements = document.querySelectorAll("#new .swiper-slide");
                 console.log(boxElements)
 
                 // documents 데이터를 각 box에 대응하여 렌더링
