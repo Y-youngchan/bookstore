@@ -18,6 +18,13 @@ var swiper = new Swiper(".sliderSwiper", {
 
 
 
+
+
+
+
+
+
+
 // # new swiper
 var new_swiper = new Swiper(".newSwiper", {
     slidesPerView: 5,
