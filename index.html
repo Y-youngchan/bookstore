@@ -70,12 +70,52 @@
     <main>
         <!-- 좌측 메뉴 -->
         <aside>
+            <div class="sideMenuTitle">
+                <h2>단기북스</h2>
+            </div>
+            <div class="sideMenuHome">
+                <a href="!@">홈</a>
+            </div>
+            <div class="sideMenuAll">
+                <a href="@#">전체교재</a>
+            </div>
+            <div class="sideMenuBest">
+                <a href="BS">베스트셀러</a>
+            </div>
+            <div class="sideMenuSub">
+                <ul>
+                    <li>월간</li>
+                    <li>주간</li>
+                </ul>
+            </div>
+            <div class="sideMenuEvent">
+                <a href="event">이벤트</a>
+            </div>
+
 
         </aside>
+
+
+        <!-- 메인컨텐츠 -->
         <div id="maincontent">
             <div id="slider">
                 <!-- 추천교재 리모트 -->
                 <div id="slider_txt">
+
+                    <h3>
+                        공단기
+                        <span>Pick!</span>
+                        <br>
+                        추천 교재
+                    </h3>
+                    <p>
+                        단기북스 MD가
+                        <br>
+                        자신있게 추천하는 오늘의 책
+                    </p>
+
+
+
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                 </div>
@@ -96,12 +136,56 @@
             </div>
 
             <!-- 교재검색란 -->
-            <div id="search"></div>
+            <div id="search-wrap">
+                <div class="book_search">
+                    <div class="search_title">교재 검색</div>
+                    <div class="search_big">
+                        <select class name="selectBox" id="searchType">
+                            <option value="SALENAME">교재명</option>
+                            <option value="PERSONNAME">저자명</option>
+                            <option value="PUBLISHER">출판사명</option>
+                            <option value="ISBM">ISBN</option>
+                        </select>
+                        <div class="search-box">
+                            <input type="search" id="search" placeholder="저자명/ 교재명 검색">
+                            <button class="icon search" onclick="gosearch() "></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <div id="banner"></div>
+            <div id="bestSeller">
+                <h2 >공단기 베스트셀러</h2>
+                <!-- 공단기 베스트셀러 Swiper -->
+                <div class="swiper bestSeller10">
+                    <div class="swipper_best10">
+                        <div class="swiper-best">bestSeller1</div>
+                        <div class="swiper-best">bestSeller2</div>
+                        <div class="swiper-best">bestSeller3</div>
+                        <div class="swiper-best">bestSeller4</div>
+                        <div class="swiper-best">bestSeller5</div>
+                        <div class="swiper-best">bestSeller6</div>
+                        <div class="swiper-best">bestSeller7</div>
+                        <div class="swiper-best">bestSeller8</div>
+                        <div class="swiper-best">bestSeller9</div>
+                        <div class="swiper-best">bestSeller10</div>
+                    </div>
+                    <div class="swiper-best-button-next"></div>
+                    <div class="swiper-best-button-prev"></div>
+
+                    
+                </div>
+            </div>
+
+
+            <div id="img">
+                <a href="img/split_bnr.png"><img src="./img/split_bnr.png" alt></a>
+            </div>
+
 
             <div id="new">
                 <h3>새로 나온 교재</h3>
+                
                 <!-- Swiper -->
                 <div class="swiper newSwiper">
                     <div class="swiper-wrapper">
@@ -115,10 +199,10 @@
                         <div class="swiper-slide">Slide 8</div>
                         <div class="swiper-slide">Slide 9</div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
                 </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
 
         </div>
@@ -155,10 +239,10 @@
                 </div>
             </div>
 
-            
+
         </div>
 
-        
+
 
         <div class="footerEtc container">
             <!-- 회사정보 라인 -->
@@ -176,7 +260,7 @@
                     <li>통신판매업신고 : 2022-서울구로-2373 사용자 정보확인</li>
                     <li>호스팅제공자 : © 2022, Amazon Web Services, Inc</li>
                 </ul>
-             </div>
+            </div>
         </div>
     </footer>
 
