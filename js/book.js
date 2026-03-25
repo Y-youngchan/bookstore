@@ -89,24 +89,26 @@ async function fetchBooks(query) {
     if (!response.ok) {
         throw new Error(`HTTP 오류: ${response.status}`);
     }
-
+    
     return response.json();
 }
 
 async function bookData2() {
     try {
         const queries = [
-            { query: "모의고사", sectionId: "week_tab" },
-            { query: "회계학", sectionId: "month_tab" },
+            { query: "모의고사", sectionClass: "week_tab" },
+            { query: "회계학", sectionClass: "month_tab" },
 
         ];
 
-        for (const { query, sectionId } of queries) {
+        for (const { query, sectionClass } of queries) {
             const data = await fetchBooks(query);
+            // console.log(data)
 
             // 해당 섹션 내의 .box 요소 8개 선택
-            const section = document.querySelector(`#${sectionId}`);
+            const section = document.querySelector(`.${sectionClass}`);
             const boxElements = section.querySelectorAll(".box");
+            // console.log(boxElements)
 
             boxElements.forEach((box, i) => {
                 const doc = data.documents[i];
@@ -115,9 +117,8 @@ async function bookData2() {
                 // // 요소 생성 및 추가
                 box.innerHTML = `<img src="${doc.thumbnail}">
                         <h3>${doc.title}</h3>
-                        <h6>${doc.authors}</h6>
-                        <p>${doc.contents.substring(0, 60)}</p>
-                        <button>click</button>
+                        <h6>${doc.publisher}</h6>
+                        <p>${data.documents[i].price}</p>                        
                         `
             });
         }
@@ -130,7 +131,7 @@ bookData2();
 
 const tabItems = document.querySelectorAll('.bestSeller_tab li');
 const tabs = document.querySelectorAll('article');
-const bestSeller = document.getElementById('bestSeller');
+console.log(tabs)
 
 tabItems.forEach((tab, i) => {
     tab.addEventListener('click', () => {
@@ -139,8 +140,6 @@ tabItems.forEach((tab, i) => {
             tab.style.display = (i === j) ? 'flex' : 'none';
         });
 
-        // 제목 텍스트 변경
-        bestSeller.textContent = tab.textContent;
     });
 });
 
@@ -188,9 +187,8 @@ async function bookData3() {
             // 요소 생성 및 추가
             box.innerHTML = `<img src="${data.documents[i].thumbnail}">
                     <h3>${data.documents[i].title}</h3>
-                    <h6>${data.documents[i].authors}</h6>
-                    <p>${data.documents[i].price}</p>
-                    <button>click</button>
+                    <h6>${data.documents[i].publisher}</h6>
+                    <p>${data.documents[i].price}</p>                    
                     `
         });
 
