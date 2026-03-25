@@ -35,9 +35,9 @@ async function bookData() {
             // 요소 생성 및 추가
             box.innerHTML = `<img src="${data.documents[i].thumbnail}">
             <div class='slider_content'>
-                <h3>${data.documents[i].title}</h3>
+                <h4>${data.documents[i].title}</h4>
                 <h6>${data.documents[i].authors}</h6>
-                <p>${data.documents[i].price}</p>
+                <p>${data.documents[i].price.toLocaleString()}원</p>
             </div>
                     `
         });
@@ -116,9 +116,9 @@ async function bookData2() {
 
                 // // 요소 생성 및 추가
                 box.innerHTML = `<img src="${doc.thumbnail}">
-                        <h3>${doc.title}</h3>
+                        <h4>${doc.title}</h4>
                         <h6>${doc.publisher}</h6>
-                        <p>${data.documents[i].price}</p>                        
+                        <p>${data.documents[i].price.toLocaleString()}원</p>                     
                         `
             });
         }
@@ -186,9 +186,9 @@ async function bookData3() {
 
             // 요소 생성 및 추가
             box.innerHTML = `<img src="${data.documents[i].thumbnail}">
-                    <h3>${data.documents[i].title}</h3>
+                    <h4>${data.documents[i].title}</h4>
                     <h6>${data.documents[i].publisher}</h6>
-                    <p>${data.documents[i].price}</p>                    
+                    <p>${data.documents[i].price.toLocaleString()}원</p>             
                     `
         });
 
