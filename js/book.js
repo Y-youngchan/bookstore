@@ -70,10 +70,13 @@ async function bookData() {
 
 bookData();
 
+
+
+
 // 공단기 베스트셀러
 async function fetchBooks(query) {
     const params = new URLSearchParams({
-        target: "title",
+        target: "publisher",
         query,
         size: 10
     });
@@ -96,8 +99,8 @@ async function fetchBooks(query) {
 async function bookData2() {
     try {
         const queries = [
-            { query: "모의고사", sectionClass: "week_tab" },
-            { query: "회계학", sectionClass: "month_tab" },
+            { query: "에스티유니타스", sectionClass: "week_tab" },
+            { query: "제이씨에듀", sectionClass: "month_tab" },
 
         ];
 
