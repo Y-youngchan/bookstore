@@ -92,7 +92,7 @@ header {
 nav {
     width: 100%;
     height: 55px;
-    
+
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 
@@ -111,11 +111,11 @@ nav ul {
     display: flex;
     justify-content: flex-start;
     font-weight: bold;
-    font-size: 18px;    
+    font-size: 18px;
 }
 
 
-nav ul li {    
+nav ul li {
     margin-left: 15px;
 }
 
@@ -124,7 +124,7 @@ nav ul li {
 
 main {
     width: 1140px;
-    height: 2280px;
+    height: 100%;
     margin: 0 auto;
     background-color: gold;
 }
@@ -132,7 +132,7 @@ main {
 
 /* 헤더 바로 아래 경로 */
 .infoPath {
-    display: block;    
+    display: block;
     width: 100%;
     height: 50px;
     margin-top: 15px;
@@ -144,11 +144,11 @@ main {
 .product {
     width: 1140px;
     height: 674px;
-    display: flex;        
+    display: flex;
     /* background-color: pink; */
 }
 
-.product .bookimg { 
+.product .bookimg {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -156,7 +156,7 @@ main {
     position: relative;
     width: 530px;
     height: 674px;
-    background-color: #ddd;    
+    background-color: #ddd;
     border-radius: 8px;
 }
 
@@ -166,10 +166,10 @@ main {
     background-color: orchid;
 }
 
-.product .bookinfo .full_title{
+.product .bookinfo .full_title {
     display: block;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     margin-right: 180px;
     margin-top: 30px;
     /* background-color: darkblue; */
@@ -194,7 +194,7 @@ main {
 .price {
     width: 100%;
     height: 50px;
-    align-items: center;    
+    align-items: center;
     margin-top: 50px;
     /* background-color: beige; */
 }
@@ -203,7 +203,7 @@ main {
     display: flex;
     margin-top: 20px;
     height: 35px;
-    
+
 }
 
 .book-price {
@@ -216,6 +216,7 @@ main {
 
 .before-price {
     justify-self: center;
+    text-decoration: line-through;
     margin-left: 10px;
     margin-top: 20px;
     height: 35px;
@@ -246,7 +247,7 @@ main {
     margin-top: 100px;
     width: 610px;
     height: 120px;
-    
+
     /* background-color: lightblue; */
 }
 
@@ -259,18 +260,18 @@ main {
 .info-2 {
     display: inline-block;
     font-size: 14px;
-    font-weight: bold;    
+    font-weight: bold;
 }
 
 .info-3 {
     font-size: 14px;
     font-weight: 500;
-    margin-left: 88px;  
+    margin-left: 88px;
 }
 
 .info-4 {
     font-size: 14px;
-    font-weight: 500;    
+    font-weight: 500;
 }
 
 .info-5 {
@@ -281,7 +282,7 @@ main {
 
 .info-6 {
     font-size: 14px;
-    font-weight: 500;    
+    font-weight: 500;
 }
 
 .info-7 {
@@ -292,7 +293,7 @@ main {
 
 .info-8 {
     font-size: 14px;
-    font-weight: 500;    
+    font-weight: 500;
 }
 
 .info-9 {
@@ -313,7 +314,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-      
+
 }
 
 .total_notice .total {
@@ -347,7 +348,7 @@ main {
     align-items: center;
     border: 1px solid #ddd;
     border-radius: 10px;
-    background-color: #eee;    
+    background-color: #eee;
 }
 
 .button .coolbuy {
@@ -365,11 +366,11 @@ main {
 
 .description {
     width: 1140px;
-    height: 1400px;
-    background-color: brown;
+    height: 8400px;
+    background-color: ivory;
 }
 
-.description .side_sticker{
+.description .side_sticker {
     width: 331px;
     height: 260px;
     display: flex;
@@ -385,14 +386,16 @@ main {
     background-color: #eee;
 }
 
-.side_sticker h3{
+.side_sticker h3 {
     font-size: 17px;
     font-weight: 800;
-    line-height: 30px;    
+    line-height: 30px;
 }
 
 .sticker_button {
     margin-top: 20px;
+
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -412,7 +415,7 @@ main {
     background-color: #eee;
 }
 
-.side_sticker .sticker_button .sticker-coolbuy{
+.side_sticker .sticker_button .sticker-coolbuy {
     width: 140px;
     height: 40px;
     margin-top: 45px;
@@ -424,6 +427,255 @@ main {
     background-color: #1060ED;
 }
 
+/* 상품정보, 교재 후기 등 스티커 메뉴 바 */
+
+section {
+    width: 810px;
+    height: 350px;    
+}
+
+.navi-bar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    z-index: 2;
+}
+
+.navi-bar li {
+    width: 120px;
+    line-height: 50px;
+    border: 1px solid #aaa;
+    text-align: center;
+    border-bottom: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.active {
+    background-color: #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.tabcontent {
+    width: 810px;
+    height: 300px;
+    position: relative;
+    left: 0;
+    bottom: 0.5px;
+    background-color: #eee;
+    border-top: 1px solid #aaa;
+}
+
+.tabcontent button {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 10%;
+    height: 40px;
+}
+
+.tabcontent:not(:first-of-type) {
+    display: none;
+}
+
+
+/* .navi-bar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    width: 810px;
+    overflow: hidden;
+    gap: 28px;
+    background-color: blanchedalmond;
+}
+
+.navi-bar li {
+    font-weight: 500;
+    font-size: 18px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    list-style: none;
+} */
+
+/* 상품정보 */
+
+.product-info {
+    width: 810px;
+    box-sizing: border-box;
+}
+
+.product-info .introduction-up {
+    width: 810px;
+    height: 280px;
+    padding-top: 20px;
+    background-color: red;
+}
+
+.product-info h2 {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 28px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.introduction-up .up-conts {
+    box-sizing: border-box;
+    width: 810px;
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+    padding: 16px;
+    border: 1px solid #ededf3;
+    border-radius: 10px;
+}
+
+.up-conts img {
+    border-radius: 50%;
+    margin-right: 15px;
+    width: 55px;
+    vertical-align: middle;
+}
+
+
+
+.up-conts .ssam {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    font-size: 13px;
+    font-weight: 500;    
+}
+
+.introduction-un {
+    position: relative;
+    width: 810px;
+    height: 100%;
+
+    background-color: blue;
+}
+
+.introduction-un h2 {
+    display: flex;
+    font-size: 16px;
+    line-height: 28px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.txt-view p{
+    display: flex;
+    font-size: 13px;
+    line-height: 21px;
+}
+
+
+
+
+
+
+
+
+
+/* 교재 후기 */
+
+.review {
+    margin-top: 500px;
+    width: 810px;
+    height: 805px;
+    position: relative;
+    background-color: hotpink;
+}
+
+/* 분철 안내 */
+
+.notice {
+    width: 810px;
+    height: 265px;
+    background-color: aquamarine;
+}
+
+.notice .notice-head {
+    margin: 50px 0 20px 0;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 30px;
+}
+
+.notice .notice-info li {
+    font-size: 14px;
+    list-style-type: circle;
+    margin-left: 20px;
+    position: relative;
+    background: #f9f9f9;
+}
+
+/* 배송/교환/반품 */
+
+.delivery {
+    width: 810px;
+    height: 520px;
+    background-color: indianred;
+}
+
+.delivery .delivery-head {
+    margin: 50px 0 20px 0;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 30px;
+}
+
+.delivery h3 {
+    margin: 10px 0 10px 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.delivery li {
+    font-size: 12px;
+    list-style-type: circle;
+    margin-left: 20px;
+    position: relative;
+    background: #f9f9f9;
+}
+
+.down-tit {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 28px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.txt-view {
+    display: block;
+    font-size: 13px;
+    position: relative;
+    height: 300px;
+}
+
+.txt-view .txt-img {
+    opacity: 0;
+    pointer-events: none;
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:810px;
+    height:8111px;
+    
+}
 
 
 
