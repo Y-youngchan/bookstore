@@ -1,5 +1,7 @@
+// 책 데이터 가져오기
 async function bookData() {
     const REST_API_KEY = 'a306d93586adcbd7b8a6024607c50b9b';
+
     const params = new URLSearchParams({
         target: 'title',
         query: "2026 심우철 실전 동형 모의고사 Season 1"
@@ -8,82 +10,57 @@ async function bookData() {
     const url = `https://dapi.kakao.com/v3/search/book?${params}`;
 
     try {
-        const response = await fetch(url, {
-            method: 'GET',
+        const res = await fetch(url, {
             headers: {
                 Authorization: `KakaoAK ${REST_API_KEY}`
             }
         });
 
-        if (!response.ok) {
-            throw new Error(`HTTP 오류! 상태 코드: ${response.status}`);
-        }
+        const data = await res.json();
 
-        const data = await response.json();
+        const box = document.querySelector(".bookimg");
 
-        // .box 요소 선택
-        const boxElement = document.querySelector(".bookimg");
-
-        // 요소 생성 및 추가
-        boxElement.innerHTML = `<img src="${data.documents[0].thumbnail}">
-                
-                `
-    } catch (error) {
-        console.log('에러발생', error);
+        box.innerHTML = `
+            <img src="${data.documents[0].thumbnail}" alt="book">
+        `;
+    } catch (e) {
+        console.error(e);
     }
 }
 
 bookData();
 
-// 탭메뉴
+
+// 탭 기능
 const tabMenu = document.querySelectorAll('.navi-bar li');
 const tabContent = document.querySelectorAll('.tabcontent');
-// 더보기
-const section = document.querySelector('section');
-const btns = document.querySelectorAll('.tabcontent button');
 
-// 탭메뉴 클릭
-tabMenu.forEach((tm, i) => {
-    tm.addEventListener('click', () => {
-        // 모든 탭 메뉴에서 'active' 클래스 제거
-        tabMenu.forEach(item => {
-            item.classList.remove('active');
-        });
+tabMenu.forEach((menu, i) => {
+    menu.addEventListener('click', () => {
 
-        // 클릭한 탭 메뉴에만 'active' 클래스 추가
-        tm.classList.add('active');
+        tabMenu.forEach(m => m.classList.remove('active'));
+        menu.classList.add('active');
 
-       
-
-        // 탭에 해당하는 리스트 보이고, 나머지는 숨기기
-        tabContent.forEach((tc, j) => {
-             console.log(tc, i, j)
-            tc.style.display = (i === j) ? 'block' : 'none';
-            // section.style.height = '350px';
-            // tc.style.height = '300px';
-            // btns[i].innerText = '더보기'
+        tabContent.forEach((content, j) => {
+            content.style.display = (i === j) ? 'block' : 'none';
         });
     });
 });
 
-// 더보기 클릭
-btns.forEach(btn => {
+
+// 더보기 기능
+const btns = document.querySelectorAll('.tabcontent button');
+
+btns.forEach((btn, i) => {
     btn.addEventListener('click', () => {
-        if (btn.textContent == '더보기') {
-            section.style.height = '550px';
-            tabContent.forEach(tc => {
-                tc.style.height = '500px';
-            });
-            btn.innerText = '접기'
+        const content = tabContent[i];
+
+        content.classList.toggle('active');
+
+        if (content.classList.contains('active')) {
+            btn.innerText = '접기';
         } else {
-            section.style.height = '350px';
-            tabContent.forEach(tc => {
-                tc.style.height = '300px';
-            });
-            btn.innerText = '더보기'
+            btn.innerText = '더보기';
         }
     });
 });
-
-
-
